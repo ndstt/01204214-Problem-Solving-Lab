@@ -62,8 +62,6 @@ int main() {
   cin >> n >> m;
   unordered_map<int, node *> graph = init(n, m);
   cout << count(graph);
-
-
-
+  
   return 0;
 }
