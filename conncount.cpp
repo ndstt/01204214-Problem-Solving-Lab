@@ -36,7 +36,6 @@ void dfs(unordered_map<int, node *> &graph, node *curNode) {
 
   for (int connected : curNode->connected_node) {
     if (!graph[connected]->is_visited) {
-      printf("From %d to %d\n", curNode->data, graph[connected]->data);
       dfs(graph, graph[connected]);
     }
   }
@@ -47,8 +46,6 @@ int count(unordered_map<int, node *> &graph) {
 
   for (const auto &pair : graph) {
     if (!pair.second->is_visited) {
-      printf("dfs start: %d\n", pair.second->data);
-        
       dfs(graph, pair.second);
       connected_component++;
     }
